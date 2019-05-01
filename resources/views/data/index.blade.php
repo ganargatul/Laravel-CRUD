@@ -26,6 +26,7 @@
     <th>Tahun Terbit</th>
     <th>Penerbit</th>
     <th>Edit</th>
+    <th>Delete</th>
    </tr>
    @foreach($data as $row)
    <tr>
@@ -36,7 +37,13 @@
     <td>{{$row['tahun_terbit']}}</td>
     <td>{{$row['penerbit']}}</td>
     <td><a href="{{action('BookController@edit', $row['id'])}}" class="btn btn-info">Edit</a></td>
-   
+    <td>
+      <form action="{{route('data.destroy', $row['id'])}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" name="button" class="btn btn-warning">Delete</button>
+      </form>
+    </td>
    </tr>
    @endforeach
   </table>

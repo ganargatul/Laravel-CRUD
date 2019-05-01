@@ -107,5 +107,10 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    
+    public function destroy($id)
+    {
+      $data = book::find($id);
+      $data->delete();
+      return redirect()->route('data.index')->with('success', 'Data Deleted');
+    }
 }
