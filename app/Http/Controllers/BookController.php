@@ -22,6 +22,7 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //show
     public function index()
     {
         $data = book::all()->toArray();
@@ -32,6 +33,7 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //create
     public function create()
     {
         return view('data.create');
@@ -71,6 +73,7 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
+    //update
     public function edit($id)
     {
         $data = book::find($id);
@@ -83,7 +86,7 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    //update
+    
     public function update(Request $request, $id)
     {
       $this->validate($request, [
@@ -108,6 +111,7 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
+    //delete
     public function destroy($id)
     {
       $data = book::find($id);
