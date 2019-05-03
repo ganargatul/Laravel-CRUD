@@ -83,6 +83,7 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
+    //update
     public function update(Request $request, $id)
     {
       $this->validate($request, [
